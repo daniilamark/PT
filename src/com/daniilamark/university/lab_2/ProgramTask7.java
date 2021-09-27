@@ -6,7 +6,9 @@ public class ProgramTask7 {
         System.out.println(dayLine(13));
         System.out.println(dayLine(18));
         System.out.println(dayLine(2));
+
         System.out.println(" ");
+
         System.out.println(dayLine(27));
         System.out.println(dayLine(-3));
         System.out.println(dayLine(8));
