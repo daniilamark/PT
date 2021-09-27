@@ -29,19 +29,19 @@ public class ControlTask {
 
         Arrays.sort(array);
         cTask.printMass(array);
-        int max1 = array[0];
-        int max2 = array[1];
-        System.out.print(" (Первый минимум - " + max1 +")");
-        System.out.print(" (Второй минимум - " + max2 +")");
+        int min1 = array[0];
+        int min2 = array[1];
+        System.out.print(" (Первый минимум - " + min1 +")");
+        System.out.print(" (Второй минимум - " + min2 +")");
 
         int arraySortedReverse[] = cTask.reverseArray(array);
-        int min1 = arraySortedReverse[0];
-        int min2 = arraySortedReverse[1];
-        System.out.print(" (Первый максимум - " + min1 +")");
-        System.out.print(" (Второй максимум - " + min2 +")");
+        int max1 = arraySortedReverse[0];
+        int max2 = arraySortedReverse[1];
+        System.out.print(" (Первый максимум - " + max1 +")");
+        System.out.print(" (Второй максимум - " + max2 +")");
         System.out.println(" ");
-        System.out.println(cTask.del(max1, max2));
-
+        System.out.println("Частное от деления первого максимума на второго " + cTask.del(max1, max2));
+        System.out.println("Частное от деления первого минимума на второго " + cTask.del(min1, min2));
 
     }
 
@@ -101,8 +101,14 @@ public class ControlTask {
         return reversed;
     }
 
-    private float del(int x, int y){
-        int i = x/y;
-        return i;
+    public float del(int x, int y){
+        if(y!=0){
+            float a = (float) x / (float) y;
+            return a;
+        }else {
+            System.out.println("упс... на 0 делить нельзя:(");
+            return 1;
+        }
     }
+
 }
