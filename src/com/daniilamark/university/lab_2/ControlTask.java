@@ -4,64 +4,63 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class ControlTask {
-    Scanner sc = new Scanner(System.in); // Объявляем Scanner
-
-
+    static Scanner sc = new Scanner(System.in); // Объявляем Scanner
     public static void main(String[] args) {
         int array[];
-        ControlTask cTask = new ControlTask();
-        array = cTask.createMass(5);
 
-        int arrayFirst4[] = cTask.copyFirstFourFieldsOfArray(array);
-        cTask.printMass(arrayFirst4);
-        System.out.print(" (Максимальное значение из массива - " + cTask.getMax(arrayFirst4)+")");
-        System.out.print(" (Минимальное значение из массива - " + cTask.getMin(arrayFirst4)+")");
+        array = createMass(5);
 
-        int arrayReverse[] = cTask.reverseArray(array);
+        int arrayFirst4[] = copyFirstFourFieldsOfArray(array);
+        printMass(arrayFirst4);
+        System.out.print(" (Максимальное значение из массива - " + getMax(arrayFirst4)+")");
+        System.out.print(" (Минимальное значение из массива - " + getMin(arrayFirst4)+")");
 
+        int arrayReverse[] = reverseArray(array);
 
-        int arrayLast4[] = cTask.copyFirstFourFieldsOfArray(arrayReverse);
-        cTask.printMass(arrayLast4);
-        System.out.print(" (Максимальное значение из массива - " + cTask.getMax(arrayLast4)+")");
-        System.out.print(" (Минимальное значение из массива - " + cTask.getMin(arrayLast4)+")");
+        int arrayLast4[] = copyFirstFourFieldsOfArray(arrayReverse);
+        printMass(arrayLast4);
+        System.out.print(" (Максимальное значение из массива - " + getMax(arrayLast4)+")");
+        System.out.print(" (Минимальное значение из массива - " + getMin(arrayLast4)+")");
 
         System.out.println("");
 
         Arrays.sort(array);
-        cTask.printMass(array);
+        printMass(array);
         int min1 = array[0];
         int min2 = array[1];
         System.out.print(" (Первый минимум - " + min1 +")");
         System.out.print(" (Второй минимум - " + min2 +")");
 
-        int arraySortedReverse[] = cTask.reverseArray(array);
+        int arraySortedReverse[] = reverseArray(array);
         int max1 = arraySortedReverse[0];
         int max2 = arraySortedReverse[1];
         System.out.print(" (Первый максимум - " + max1 +")");
         System.out.print(" (Второй максимум - " + max2 +")");
         System.out.println(" ");
-        System.out.println("Частное от деления первого максимума на второго " + cTask.del(max1, max2));
-        System.out.println("Частное от деления первого минимума на второго " + cTask.del(min1, min2));
-
+        System.out.println("Частное от деления первого максимума на второго " + del(max1, max2));
+        System.out.println("Частное от деления первого минимума на второго " + del(min1, min2));
     }
-
-    public int[] createMass(int sizeMass){
+    public static int[] createMass(int sizeMass){
         int[] array = new int[sizeMass]; // Создаём массив int размером в size
         System.out.println("Введите элементы массива: ");
         // заполняем массив
         for (int i = 0; i < sizeMass; i++) {
-            array[i] = sc.nextInt(); // Заполняем массив элементами, введёнными с клавиатуры
+            if (sc.hasNextInt()) {
+                array[i] = sc.nextInt(); // Заполняем массив элементами, введёнными с клавиатуры
+            } else {
+                System.out.println("Вы ввели не число");
+                break;
+            }
         }
         return array;
     }
-
-    public void printMass(int array[]){
+    // вывод массива в консоль
+    public static void printMass(int array[]){
         String intArrayString = Arrays.toString(array);
         System.out.print("\n"+intArrayString);
     }
-
-    //здесь находим максимум
-    public int getMax(int[] inputArray){
+    // нахождение максимума
+    public static int getMax(int[] inputArray){
         int maxValue = inputArray[0];
         for(int i=1;i < inputArray.length;i++){ if(inputArray[i] > maxValue){
             maxValue = inputArray[i];
@@ -69,9 +68,8 @@ public class ControlTask {
         }
         return maxValue;
     }
-
-    // здесь находим минимум
-    public int getMin(int[] inputArray){
+    // нахождение минимума
+    public static int getMin(int[] inputArray){
         int minValue = inputArray[0];
         for(int i=1;i<inputArray.length;i++){
             if(inputArray[i] < minValue){
@@ -80,8 +78,8 @@ public class ControlTask {
         }
         return minValue;
     }
-
-    private int[] copyFirstFourFieldsOfArray(int[] source) {
+    // копируем первые 4 элемента из массива
+    private static int[] copyFirstFourFieldsOfArray(int[] source) {
         if(source.length > 4){
             int[] temp = new int[4];
             System.arraycopy(source, 0, temp, 0, 4);
@@ -92,16 +90,16 @@ public class ControlTask {
             return temp;
         }
     }
-
-    public int[] reverseArray(int[] nums) {
+    // переворачиваем массив
+    public static int[] reverseArray(int[] nums) {
         int[] reversed = new int[nums.length];
         for (int i=0; i<nums.length; i++) {
             reversed[i] = nums[nums.length - 1 - i];
         }
         return reversed;
     }
-
-    public float del(int x, int y){
+    // делим число на число
+    public static float del(int x, int y){
         if(y!=0){
             float a = (float) x / (float) y;
             return a;
@@ -110,5 +108,4 @@ public class ControlTask {
             return 1;
         }
     }
-
 }
