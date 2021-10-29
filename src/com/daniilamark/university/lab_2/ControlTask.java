@@ -7,7 +7,6 @@ public class ControlTask {
     static Scanner sc = new Scanner(System.in); // Объявляем Scanner
     public static void main(String[] args) {
         int array[];
-
         array = createMass(5);
 
         int arrayFirst4[] = copyFirstFourFieldsOfArray(array);
@@ -25,6 +24,7 @@ public class ControlTask {
         System.out.println("");
 
         Arrays.sort(array);
+
         printMass(array);
         int min1 = array[0];
         int min2 = array[1];
@@ -32,6 +32,7 @@ public class ControlTask {
         System.out.print(" (Второй минимум - " + min2 +")");
 
         int arraySortedReverse[] = reverseArray(array);
+
         int max1 = arraySortedReverse[0];
         int max2 = arraySortedReverse[1];
         System.out.print(" (Первый максимум - " + max1 +")");
@@ -93,7 +94,7 @@ public class ControlTask {
     // переворачиваем массив
     public static int[] reverseArray(int[] nums) {
         int[] reversed = new int[nums.length];
-        for (int i=0; i<nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             reversed[i] = nums[nums.length - 1 - i];
         }
         return reversed;

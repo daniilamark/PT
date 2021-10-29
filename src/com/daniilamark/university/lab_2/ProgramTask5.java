@@ -1,6 +1,7 @@
 package com.daniilamark.university.lab_2;
 
 public class ProgramTask5 {
+
     public static void main(String[] args) {
         sum("Welcome!", 20, 10);
         sum("Welcome!");

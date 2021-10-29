@@ -21,7 +21,7 @@ class MyClass {
         System.out.println("\nМаксимум среди отрицательных элементов: " + getMaxNumLessZero(arrInt));
 
         System.out.println("----------------------------------------------------------");
-        String s = "Министерство внутренних дел Российской Федерации";
+        String s = "Российский государственный профессионально-педагогический университет";
         System.out.println("Текст: " + s);
         System.out.println("Аббревиатура из текста: " + getAbbreviation(s));
         System.out.println("----------------------------------------------------------");
@@ -72,5 +72,6 @@ class MyClass {
     public static String getAbbreviation(String str){
         String result = str.replaceAll("\\B.|\\P{L}", "").toUpperCase();
         return result;
+
     }
 }
