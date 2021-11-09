@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 public class AllTripletsSymbols {
+    //
     private Object[] source;
     private int variationLength;
 
