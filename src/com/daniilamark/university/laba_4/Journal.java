@@ -4,8 +4,8 @@ public class Journal {
     private String name;
     private String periodicity;
     private int priceOfOne;
-    private int subscriptionCost; //
-    private int numberOfCopiesReleased; //
+    private int subscriptionCost;
+    private int numberOfCopiesReleased;
 
     public Journal(String name, String periodicity, int priceOfOne, int subscriptionCost, int numberOfCopiesReleased) {
         this.name = name;
@@ -26,8 +26,6 @@ public class Journal {
     public void setName(String name) {
         if (name != null){
             this.name = name;
-        }else{
-            //
         }
     }
 
@@ -38,20 +36,17 @@ public class Journal {
     public void setPeriodicity(String periodicity) {
         if (periodicity != null){
             this.periodicity = periodicity;
-        }else{
-            //
         }
     }
 
     public int getPriceOfOne() {
+        priceOfOne = getNumberOfCopiesReleased() / getSubscriptionCost();
         return priceOfOne;
     }
 
     public void setPriceOfOne(int priceOfOne) {
         if (priceOfOne > 0){
             this.priceOfOne = priceOfOne;
-        }else{
-           //
         }
     }
 
@@ -62,8 +57,6 @@ public class Journal {
     public void setSubscriptionCost(int subscriptionCost) {
         if (subscriptionCost > 0){
             this.subscriptionCost = subscriptionCost;
-        }else{
-            //
         }
     }
 
@@ -74,8 +67,6 @@ public class Journal {
     public void setNumberOfCopiesReleased(int numberOfCopiesReleased) {
         if (numberOfCopiesReleased > 0){
             this.numberOfCopiesReleased = numberOfCopiesReleased;
-        }else{
-            //
         }
     }
 
