@@ -79,10 +79,12 @@ public class Journal {
 
 class Program{
     public static void main(String[] args) {
+        /*
         System.out.println("\n-------------------------------------");
         Journal journalCode = new Journal("code", "2 in 7", 150, 20, 10);
         journalCode.setPriceOfOne(-20);
         journalCode.displayInfo();
+    */
         System.out.println("\n-------------------------------------");
         Journal journalGame = new Journal();
         journalGame.setName("game");
@@ -91,6 +93,7 @@ class Program{
         journalGame.setSubscriptionCost(30);
         journalGame.setNumberOfCopiesReleased(1200);
         journalGame.displayInfo();
+
         System.out.println("\n-------------------------------------");
         Journal journalMusic = new Journal();
         journalMusic.setName("music");
@@ -101,5 +104,6 @@ class Program{
         System.out.println("Name: " + journalMusic.getName() + "\nPeriodicity: " + journalMusic.getPeriodicity() + "\nPriceOfOne: " + journalMusic.getPriceOfOne() +
                 "\nSubscriptionCost: " + journalMusic.getSubscriptionCost() + "\nNumberOfCopiesReleased: " + journalMusic.getNumberOfCopiesReleased());
         System.out.println("-------------------------------------");
+
     }
 }
