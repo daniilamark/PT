@@ -1,6 +1,6 @@
 package com.daniilamark.university.laba_5;
 
-public class Subscription implements ISubscription{
+public class Subscription implements IPrint {
     String name;
     int price;
 

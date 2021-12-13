@@ -1,6 +1,6 @@
 package com.daniilamark.university.laba_5;
 
-public class SubscriptionService implements ISubscription{
+public class SubscriptionService implements IPrint, ISearch{
     Subscription subscription = new Subscription("standart", 190);
     Subscription presentSubscription = new Subscription("present");
     Subscription freeSubscription = new Subscription("free");
@@ -31,6 +31,7 @@ public class SubscriptionService implements ISubscription{
         }
     }
 
+    @Override
     public void searchByName(Subscription[] subscriptionsArray, String nameSubscription){
         for (Subscription sub : subscriptionsArray){
             if (nameSubscription == sub.getName()){
