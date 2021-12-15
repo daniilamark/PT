@@ -1,37 +1,32 @@
 package com.daniilamark.university.lab_6;
 
+import java.util.ArrayList;
+
 public class SubscriptionService implements ISearch {
 
     SubscriptionArray subscriptionArray = new SubscriptionArray();
 
-    Subscription[] array = subscriptionArray.subscriptions;
+    ArrayList<Subscription> arrayListSu = subscriptionArray.arrayListSub;
 
-    int allCountSubscriptions = array.length;
+    int allCountSubscriptions = arrayListSu.size();
     int countSubscriptions;
     String res = null;
 
-    @Override
-    public void searchByName(String nameSubscription){
 
-        countSubscriptions = 0;
-        res = null;
-        for (Subscription sub : array){
-            //System.out.println(sub.getName());
-            if (sub.getName() == nameSubscription){
+    public String searchByName(String nameSubscription){
+        int countSubscriptions = 0;
+        String res = null;
+        for (Subscription sub : arrayListSu){
+            if (sub.getName().toString() == nameSubscription){
                 countSubscriptions ++;
                 System.out.println(sub.getName());
-                res = sub.getName();
             }
         }
-
-
-        /*
-        if(countSubscriptions == 0){
-            res = "Такой подписки нет";
-        }else{
+        if(countSubscriptions > 0){
             res = String.valueOf(countSubscriptions);
+        }else{
+            res = "Такой подписки нет";
         }
-
-         */
+        return res;
     }
 }

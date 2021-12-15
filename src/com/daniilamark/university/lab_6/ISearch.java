@@ -1,5 +1,7 @@
 package com.daniilamark.university.lab_6;
 
+import java.util.ArrayList;
+
 public interface ISearch {
-    public void searchByName(String nameSubscription);
+    String searchByName(String nameSubscription);
 }

@@ -1,6 +1,7 @@
 package com.daniilamark.university.lab_5;
 
 public class SubscriptionService implements IPrint, ISearch{
+
     Subscription subscription = new Subscription("standart", 190);
     Subscription presentSubscription = new Subscription("present");
     Subscription freeSubscription = new Subscription("free");
