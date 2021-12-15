@@ -1,8 +1,8 @@
-package com.daniilamark.university.laba_5;
+package com.daniilamark.university.lab_6;
 
 public class Subscription implements IPrint {
-    String name;
-    int price;
+    private String name;
+    private int price;
 
     Subscription(String name, int price){
         this.name = name;

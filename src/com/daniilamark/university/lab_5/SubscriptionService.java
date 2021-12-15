@@ -1,4 +1,4 @@
-package com.daniilamark.university.laba_5;
+package com.daniilamark.university.lab_5;
 
 public class SubscriptionService implements IPrint, ISearch{
     Subscription subscription = new Subscription("standart", 190);

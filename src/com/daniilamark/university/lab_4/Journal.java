@@ -1,4 +1,4 @@
-package com.daniilamark.university.laba_4;
+package com.daniilamark.university.lab_4;
 
 public class Journal {
     private String name;

@@ -1,4 +1,4 @@
-package com.daniilamark.university.laba_5;
+package com.daniilamark.university.lab_6;
 
 public interface IPrint {
     void printInfo();
